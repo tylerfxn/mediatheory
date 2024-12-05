@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "mediatheory"
+version = "0.1.0"
+description = "media remixing interface"
+authors = ["Tyler Feuerstein <tylerfxn@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+black = "^24.10.0"
+pre-commit = "^4.0.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+# Same as Black.
+line-length = 88
+# Enable pycodestyle ("E"), pyflakes ("F"), etc.
+select = ["E", "F", "I", "B", "W"]
+# Exclude files/folders
+exclude = [
+    ".git",
+    ".venv",
+    "venv",
+    "__pycache__",
+]
+
+# Sort imports
+[tool.ruff.isort]
+known-first-party = ["mediatheory"]
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
