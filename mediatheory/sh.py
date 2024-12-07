@@ -7,6 +7,10 @@ def sh(*args, **kwargs):
     return bash(*args, **kwargs)
 
 
+sh.brew = "/opt/homebrew/bin/brew"
+sh.which = "which"
+
+
 def bash(*args, **kwargs):
     command = []
 
