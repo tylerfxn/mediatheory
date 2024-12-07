@@ -9,13 +9,22 @@ readme = "README.md"
 python = "^3.9"
 black = "^24.10.0"
 pre-commit = "^4.0.1"
+setuptools = "^75.6.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.8.1"
 
+[tool.poetry.scripts]
+mediatheory-system-installer = "mediatheory.system.main:main"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+include = '\.pyi?$'
 
 [tool.ruff]
 # Same as Black.
@@ -34,7 +43,7 @@ exclude = [
 [tool.ruff.isort]
 known-first-party = ["mediatheory"]
 
-[tool.black]
-line-length = 88
-target-version = ['py39']
-include = '\.pyi?$'
+[tool.system-dependencies]
+brew = [
+    "ffmpeg",
+]

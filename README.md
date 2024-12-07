@@ -1,11 +1,15 @@
 # mediatheory
 
+```
+∫ technology ⊙ λ media ≊ ∆ art
+```
+
 ## A media [re]mixing interface - 💾 🎰 🎞️
 
 `mediatheory` is an open source toolkit for producing art: dicing, slicing, chopping, and remixing media. It accomplishes this by:
 
 - providing a hands-on command line and programmatic interface to media transformation
-- integrating generative AI APIs across image and video, like [`runway`](https://docs.dev.runwayml.com/) / [`luma`](https://lumalabs.ai/luma-api/client-docs/index.html) / [`fal`](https://fal.ai/) / [`flux`](https://blackforestlabs.ai/), and more.
+- integrating generative AI APIs across image and video, like [`runway`](https://docs.dev.runwayml.com/) / [`luma`](https://lumalabs.ai/luma-api/client-docs/index.html) / [`fal`](https://fal.ai/) / [`replicate`](https://replicate.com/) / [`flux`](https://blackforestlabs.ai/), and more.
 - leveraging multimedia transformation softwares like
     - [`FFmpeg`](https://github.com/FFmpeg/FFmpeg) - process multimedia content such as audio, video, subtitles and related metadata.
     - [`ImageMagick`](https://github.com/ImageMagick/ImageMagick) - for editing and manipulating digital images.
@@ -14,6 +18,46 @@
     - [`MLT Framework`](https://github.com/mltframework/mlt) - multimedia framework designed for video editing.
     - [`OpenCV`](https://github.com/opencv/opencv) - a library of programming functions mainly for real-time computer vision.
     - and more.
+
+
+
+## Setup
+
+```
+python3 -m venv venv
+source venv/bin/activate
+pip install poetry
+poetry install
+```
+
+## Environment basics
+
+```
+# Add dependencies
+poetry add requests  # for production
+poetry add pytest --dev  # for development
+
+# Run commands in virtual environment
+poetry run python script.py
+poetry run pytest
+
+# Activate virtual environment
+poetry shell
+
+# Build package
+poetry build
+
+# Update dependencies
+poetry update
+```
+
+## Contribution / Development 
+
+**Install pre-commit format hooks**
+
+```
+poetry run pre-commit install
+```
 
 
 ## Important Reading
@@ -71,42 +115,3 @@
 - Softwares / Applications / Command lines
 - Video games / Virtual reality / Augmented reality
 - Interactive installations / Responsive environments
-
-## Setup
-
-```
-python3 -m venv venv
-source venv/bin/activate
-pip install poetry
-poetry install
-```
-
-## Environment basics
-
-```
-# Add dependencies
-poetry add requests  # for production
-poetry add pytest --dev  # for development
-
-# Run commands in virtual environment
-poetry run python script.py
-poetry run pytest
-
-# Activate virtual environment
-poetry shell
-
-# Build package
-poetry build
-
-# Update dependencies
-poetry update
-```
-
-## Contribution / Development 
-
-**Install pre-commit format hooks**
-
-```
-poetry run pre-commit install
-```
-
