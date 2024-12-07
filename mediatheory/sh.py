@@ -8,6 +8,7 @@ def sh(*args, **kwargs):
 
 
 sh.brew = "/opt/homebrew/bin/brew"
+sh.ffmpeg = "/opt/homebrew/bin/ffmpeg"
 sh.which = "which"
 
 

@@ -16,6 +16,7 @@ ruff = "^0.8.1"
 
 [tool.poetry.scripts]
 mediatheory-system-installer = "mediatheory.system.main:main"
+gif = "mediatheory.entrypoints.gif:main"
 
 [build-system]
 requires = ["poetry-core"]
