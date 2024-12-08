@@ -4,7 +4,7 @@
 ∫ technology ⊙ λ media ≊ ∆ art
 ```
 
-## A media [re]mixing interface - 💾 🎰 🎞️
+## 💾 🎰 - media [re]mixing interface
 
 `mediatheory` is an open source toolkit for producing art: dicing, slicing, chopping, and remixing media. It accomplishes this by:
 
