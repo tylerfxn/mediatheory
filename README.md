@@ -20,6 +20,18 @@
     - and more.
 
 
+## Examples
+
+Convert a video into a gif
+```
+gif video.mp4
+```
+
+Execute Runway's image-to-video API
+```
+runway image.jpg
+runway image.jpg --prompt "camera dolly in"
+```
 
 ## Setup
 

@@ -8,6 +8,7 @@ setup(
         "console_scripts": [
             "mediatheory-system-installer=mediatheory.system.main:main",
             "gif=mediatheory.entrypoints.gif:main",
+            "runway=mediatheory.entrypoints.runway:main",
         ]
     }
 )
