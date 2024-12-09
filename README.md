@@ -22,12 +22,12 @@
 ## Demos
 
 <p align-"center>
-    <img src="./img/42833715.gif" width=35%>
-    <img src="./img/02ba1cc4.gif" width=35%>
+    <img src="./img/42833715.gif" width=50%>
+    <img src="./img/02ba1cc4.gif" width=50%>
 </p>
 <p align-"center>
-    <img src="./img/83eefe8c.gif" width=35%>
-    <img src="./img/e3db4834.gif" width=35%>
+    <img src="./img/83eefe8c.gif" width=50%>
+    <img src="./img/e3db4834.gif" width=50%>
 </p>
 
 <!-- ![](./img/42833715.gif) -->
