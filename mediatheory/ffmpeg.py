@@ -4,7 +4,8 @@ from mediatheory.sh import sh
 
 class FFmpeg:
     @staticwrite
-    def gif(path):
+    def gif(path, width, height, fps):
         filename = path.split("/")[-1]
         no_ext = filename.split(".")[0]
-        sh(sh.ffmpeg, "-i", path, f"./{no_ext}.gif")
+        vf = f"scale={width}:{height},fps={fps}"
+        sh(sh.ffmpeg, "-i", path, "-vf", vf, f"./{no_ext}.gif")
