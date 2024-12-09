@@ -17,7 +17,9 @@ ruff = "^0.8.1"
 
 [tool.poetry.scripts]
 mediatheory-system-installer = "mediatheory.system.main:main"
+concat = "mediatheory.entrypoints.concat:main"
 gif = "mediatheory.entrypoints.gif:main"
+reverse = "mediatheory.entrypoints.reverse:main"
 runway = "mediatheory.entrypoints.runway:main"
 
 [build-system]
