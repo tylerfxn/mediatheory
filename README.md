@@ -19,6 +19,20 @@
     - [`OpenCV`](https://github.com/opencv/opencv) - a library of programming functions mainly for real-time computer vision.
     - and more.
 
+## Demos
+
+<p align-"center>
+    <img src="./img/42833715.gif" width=400>
+    <img src="./img/02ba1cc4.gif" width=400>
+</p>
+<p align-"center>
+    <img src="./img/83eefe8c.gif" width=400>
+    <img src="./img/e3db4834.gif" width=400>
+</p>
+
+<!-- ![](./img/42833715.gif) -->
+<!-- ![](./img/02ba1cc4.gif) -->
+<!-- ![](./img/83eefe8c.gif) -->
 
 ## Examples
 
@@ -127,3 +141,7 @@ poetry run pre-commit install
 - Softwares / Applications / Command lines
 - Video games / Virtual reality / Augmented reality
 - Interactive installations / Responsive environments
+
+## Miscellaneous
+
+December 2024: SOTA OSS text to video, image to video: https://github.com/Lightricks/LTX-Video
