@@ -144,4 +144,7 @@ poetry run pre-commit install
 
 ## Miscellaneous
 
-December 2024: SOTA OSS text to video, image to video: https://github.com/Lightricks/LTX-Video
+December 2024: SOTA OSS text to video, image to video:
+- https://github.com/Lightricks/LTX-Video
+- https://fal.ai/models/fal-ai/ltx-video/image-to-video
+- https://huggingface.co/Lightricks/LTX-Video

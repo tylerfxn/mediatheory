@@ -12,7 +12,15 @@ class FFmpeg:
         filename = path.split("/")[-1]
         no_ext = filename.split(".")[0]
         vf = f"scale={width}:{height},fps={fps}"
-        sh(sh.ffmpeg, "-i", path, "-vf", vf, f"./{no_ext}.gif")
+        out = f"./{no_ext}.gif"
+        sh(sh.ffmpeg, "-i", path, "-vf", vf, out)
+        return out
+
+    @staticwrite
+    def blur(path: str, amount: int):
+        out = path.replace(".", "-blur.")
+        sh(sh.ffmpeg, "-i", path, "-vf", f"gblur=sigma={amount}", out)
+        return out
 
     @staticwrite
     def reverse(path: str):
@@ -20,6 +28,7 @@ class FFmpeg:
         no_ext, ext = filename.split(".")
         out = f"./{no_ext}-reverse.{ext}"
         sh(sh.ffmpeg, "-i", path, "-vf", "reverse", "-af", "reverse", out)
+        return out
 
     @staticwrite
     def concat(
@@ -75,6 +84,7 @@ class FFmpeg:
                 output_file = f"{uuid.uuid4()}.{ext}"
 
             sh(cmd, output_file)
+            return output_file
         finally:
             if os.path.exists(tmp):
                 os.remove(tmp)
