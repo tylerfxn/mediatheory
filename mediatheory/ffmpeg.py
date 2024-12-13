@@ -7,6 +7,10 @@ from mediatheory.sh import sh
 
 
 class FFmpeg:
+    """
+    TODO: better out file path handling - always use absolutes.
+    """
+
     @staticwrite
     def gif(path, width, height, fps):
         filename = path.split("/")[-1]
@@ -18,8 +22,16 @@ class FFmpeg:
 
     @staticwrite
     def blur(path: str, amount: int):
-        out = path.replace(".", "-blur.")
+        filename = path.split("/")[-1]
+        out = filename.replace(".", "-blur.")
         sh(sh.ffmpeg, "-i", path, "-vf", f"gblur=sigma={amount}", out)
+        return out
+    
+    @staticwrite
+    def invert(path: str):
+        filename = path.split("/")[-1]
+        out = filename.replace(".", "-invert.")
+        sh(sh.ffmpeg, "-i", path, "-vf", "negate", out)
         return out
 
     @staticwrite
