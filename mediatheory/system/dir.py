@@ -5,6 +5,7 @@ from mediatheory.decorator import staticwrite
 MEDIA_INPUT = "./media/in"
 MEDIA_OUTPUT = "./media/out"
 
+
 class Directory:
     @staticwrite
     def setup_dirs():

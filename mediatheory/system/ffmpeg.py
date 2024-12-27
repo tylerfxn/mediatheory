@@ -13,12 +13,14 @@ def install():
     else:
         logging.error("Unknown platform")
 
+
 def find():
     try:
         sh(sh.which, "ffmpeg")
         return True
     except CalledProcessError:
         return False
+
 
 if __name__ == "__main__":
     install()

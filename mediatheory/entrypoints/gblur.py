@@ -4,21 +4,12 @@ from mediatheory.ffmpeg import FFmpeg
 
 
 def create_parser():
-    parser = argparse.ArgumentParser(description="Concatenate video files.")
-
-    parser.add_argument(
-        "input",
-        nargs="+",
-        type=str,
-        help="space delimited input file paths",
+    parser = argparse.ArgumentParser(
+        description="Process a path with an optional renderer."
     )
 
-    parser.add_argument(
-        "--output",
-        "-o",
-        default=None,
-        help="output file path",
-    )
+    parser.add_argument("path", type=str, help="The path to process")
+    parser.add_argument("sigma", type=str, default="5")
 
     parser.add_argument(
         "--renderer",
@@ -36,10 +27,7 @@ def main():
     args = parser.parse_args()
 
     if args.renderer == "ffmpeg":
-        FFmpeg.concat(
-            input_files=args.input,
-            output_file=args.output,
-        )
+        FFmpeg.gblur(args.path, args.sigma)
 
 
 if __name__ == "__main__":

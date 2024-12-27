@@ -21,12 +21,12 @@ class FFmpeg:
         return out
 
     @staticwrite
-    def blur(path: str, amount: int):
+    def gblur(path: str, amount: int):
         filename = path.split("/")[-1]
         out = filename.replace(".", "-blur.")
         sh(sh.ffmpeg, "-i", path, "-vf", f"gblur=sigma={amount}", out)
         return out
-    
+
     @staticwrite
     def invert(path: str):
         filename = path.split("/")[-1]
@@ -43,6 +43,12 @@ class FFmpeg:
         return out
 
     @staticwrite
+    def stitch(mp4_path: str, mp3_path: str):
+        out = f"{uuid.uuid4()}.mp4"
+        sh(sh.ffmpeg, "-i", mp4_path, "-i", mp3_path, "-shortest", out)
+        return out
+
+    @staticwrite
     def concat(
         input_files: List[str],
         output_file: str = None,
@@ -51,7 +57,7 @@ class FFmpeg:
         audio_codec: str = "aac",
         crf: int = 23,
         preset: str = "medium",
-        extra_params: Optional[Dict[str, str]] = None
+        extra_params: Optional[Dict[str, str]] = None,
     ) -> None:
         """
         input_files: List of input video file paths
@@ -78,12 +84,18 @@ class FFmpeg:
             cmd = [sh.ffmpeg, "-f", "concat", "-safe", "0", "-i", tmp]
 
             if reencode:
-                cmd.extend([
-                    "-c:v", video_codec,
-                    "-c:a", audio_codec,
-                    "-crf", str(crf),
-                    "-preset", preset
-                ])
+                cmd.extend(
+                    [
+                        "-c:v",
+                        video_codec,
+                        "-c:a",
+                        audio_codec,
+                        "-crf",
+                        str(crf),
+                        "-preset",
+                        preset,
+                    ]
+                )
             else:
                 cmd.extend(["-c", "copy"])
 

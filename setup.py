@@ -6,11 +6,14 @@ setup(
     packages=["mediatheory"],
     entry_points={
         "console_scripts": [
-            "mediatheory-system-installer=mediatheory.system.main:main",
             "concat=mediatheory.entrypoints.concat:main",
+            "gblur=mediatheory.entrypoints.gblur:main",
             "gif=mediatheory.entrypoints.gif:main",
+            "invert=mediatheory.entrypoints.invert:main",
             "reverse=mediatheory.entrypoints.reverse:main",
             "runway=mediatheory.entrypoints.runway:main",
+            "stitch=mediatheory.entrypoints.stitch:main",
+            "system-installer=mediatheory.system.main:main",
         ]
-    }
+    },
 )
